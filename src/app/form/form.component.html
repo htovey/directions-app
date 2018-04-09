@@ -1,0 +1,14 @@
+<div class="card card-block route-form">
+    <form #appForm="ngForm"  [formGroup]=appFormGroup (ngSubmit)="onSubmit(appForm)">
+      <div [ngClass]="styleClass">
+        <div class="form-group">
+          <input type="text" class="form-control inputBgOpaque" placeholder="Enter Starting Address or Zip" required [(ngModel)]="model.start" formControlName="start"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control inputBgOpaque" placeholder="Enter Destination Address or Zip" required [(ngModel)]="model.end" formControlName="end"/>
+        </div>
+     </div>  
+     <button [disabled]="appFormGroup.invalid && styleClass === 'showMe'" class="btn map-btn">{{ styleClass === 'showMe' ? 'Get Directions' : 'New Directions'}}</button>
+    </form>
+  </div>
+  <!-- <p>Form status: {{ appFormGroup.status | json }}</p> -->

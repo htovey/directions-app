@@ -1,0 +1,26 @@
+.route-form {
+    background-color: #87aedd;
+}
+
+/* .form-group {
+    width: 95%;
+    margin: auto;
+} */
+/* .hideMe {
+    visibility: hidden;
+}
+
+.showMe {
+    visibility: visible;
+} */
+.map-btn {
+    color: #ffffff; 
+    background-color: rgb(69, 87, 146); 
+    border-color: #130269; 
+    font-family: "Thonburi", "Calibri", sans-serif;
+}
+
+.inputBgOpaque:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset;
+    box-shadow: 0 0 0 100px white inset;
+}
