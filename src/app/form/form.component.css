@@ -1,7 +1,14 @@
 .route-form {
     background-color: #87aedd;
+    margin: 0;
+    margin-bottom: 0px;
 }
-
+@media only screen and (max-width: 500px) {
+   .route-form {
+        padding-top: 30px;
+        padding-bottom: 30px;
+   }
+}
 /* .form-group {
     width: 95%;
     margin: auto;

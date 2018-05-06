@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { element } from 'protractor';
 import { OutputComponent } from './output/output.component';
+import { MainComponent } from './main/main.component';
 
 declare var google;
 
@@ -17,6 +18,7 @@ declare var google;
 export class AppComponent implements OnInit {
   @ViewChild(OutputComponent) outPut: OutputComponent;
   @ViewChild(FormComponent) form: FormComponent;
+  
   @Input('route') route: Route;
   
   public styleClass = 'hideMe';
@@ -36,13 +38,18 @@ export class AppComponent implements OnInit {
     var promiseMe = new Promise( (resolve, reject)=> {
       console.log('1 Promise Constructor');
       var directionsService = new google.maps.DirectionsService;
-      var directionsDisplay = new google.maps.DirectionsRenderer;
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      
+  var mapOptions = {
+    zoom: 12
+  };
       var mapDiv = mapComp.mapDiv.nativeElement;
       var listDiv = mapComp.listPanel.nativeElement;
-      var map = new google.maps.Map(mapDiv);  
+      var map = new google.maps.Map(mapDiv, mapOptions);  
+      
       directionsDisplay.setPanel(listDiv);
       directionsDisplay.setMap(map);
-            directionsService.route({
+      directionsService.route({
             origin: route.start, 
             destination: route.end,
             travelMode: 'DRIVING'
@@ -50,6 +57,7 @@ export class AppComponent implements OnInit {
               console.log('2 IS STATUS OK?');
               if (status === 'OK') {
                 //console.log('SUCCESS');
+              
                 directionsDisplay.setDirections(response);
                 resolve('success');
               } else {

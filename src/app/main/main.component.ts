@@ -8,7 +8,7 @@ import { Route } from '../model/route';
 })
 export class MainComponent implements OnInit {
   route: Route;
-
+  
   constructor() { }
 
   ngOnInit() {

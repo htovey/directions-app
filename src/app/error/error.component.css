@@ -20,4 +20,12 @@
     margin-bottom: .5rem;
 }
 
-
+@media only screen and (max-width: 600px) {
+    #errorPanel {
+        width: 90%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        margin: 50px auto auto auto;
+    }
+}

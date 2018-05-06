@@ -1,14 +1,41 @@
-#mapDiv {
-    float:left;
-    width:70%; 
-    height: 700px;
-    border: 1px solid;
-}
+@media only screen and (max-width: 600px) {
+	#mapDiv {
+        width: 100%; 
+        height: 600px;
+        border: 1px solid;
+        overflow-y: scroll;
+        position: relative;
+    }
 
-#listPanel {
-    float:right;
-    width:30%;
-    height: 700px;
-    overflow-y: scroll;
-    border: 1px solid #000000;
+    #mapDiv map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-y: scroll;
+    }
+    
+    #listPanel {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        border: 1px solid #000000;
+    }
+}
+@media only screen and (min-width: 600px) {
+	#mapDiv {
+        float:left;
+        width:70%; 
+        height: 700px;
+        border: 1px solid;
+    }
+    
+    #listPanel {
+        float:right;
+        width:30%;
+        height: 700px;
+        overflow-y: scroll;
+        border: 1px solid #000000;
+    }
 }
